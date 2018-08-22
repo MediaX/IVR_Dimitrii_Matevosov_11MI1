@@ -1,0 +1,51 @@
+
+
+
+
+
+/* MAIN LAYOUT DIVS
+--------------------------------------------------------- */
+#ja-wrapper {
+	background: #F2F2F2;
+}
+
+
+
+/* Module rounded */
+div.module h3 {
+	border-bottom: 1px solid #E9E9E9;
+	color: #7BA566;
+}
+
+
+div.module_text span {
+	background: #FFFFFF;
+}
+
+/* red */
+div.module_black h3,
+div.module_green h3,
+div.module_blue h3,
+div.module_red h3 {
+	border-bottom: 1px solid #F6F6F6;
+	color: #FFFFFF;
+}
+
+
+
+ul.menu li.active a {
+	background-color: #ECECEC;
+}
+ul.center-img{
+	text-align: center;
+}
+
+
+ul.menu li a:hover,
+ul.menu li a:active,
+ul.menu li a:focus {
+	background-color: #F6F6F6;
+}
+.blue{
+	background: rgb(119, 187, 226);
+}
