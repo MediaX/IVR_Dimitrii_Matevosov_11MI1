@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+ {%- block topbar -%}
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+      <div class="navbar-header">
+        <h2>
+             <center>
+                  <a href="{{ url_for('admin.index') }}" class="brand font1">Главная</a><small> |</small>
+                  <a href="{{ url_for('admin.index1') }}" class="brand font1">О лицее</a><small> |</small>
+                  <a href="{{ url_for('admin.index2') }}" class="brand font1">Направления</a><small> |</small>
+                  <a href="{{ url_for('admin.index3') }}" class="brand font1">Вступительные</a><small> |</small>
+                  <a href="{{ url_for('admin.index4') }}" class="brand font1">Видео о лицее</a><small> |</small>
+                  <a href="{{ url_for('admin.index5') }}" class="brand font1">Лицеисты в телеграм</a><small> |</small>
+                  <a href="{{ url_for('admin.index6') }}" class="brand font1">Советы</a><small> |</small>
+                  <a href="{{ url_for('admin.index7') }}" class="brand font1">Мероприятия</a><small> |</small>
+                  <a href="{{ url_for('admin.index8') }}" class="brand font1">Учебный день</a><small> |</small>
+                  <a href="{{ url_for('admin.index9') }}" class="brand font1">Особенности</a>
+             </center>
+          </h2>
+    </div>
+
+    <div class="navbar-collapse">
+      <ul class="nav nav-pills navbar-nav navbar-right ">
+      <li>
+        <a href="{{ url_for('admin.create') }}" class="btn">Добавить статью</a>
+      </li>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</nav>
+ {%- endblock -%}
