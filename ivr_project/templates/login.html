@@ -1,0 +1,16 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <center><h1>Войти</h1>
+<form action="/login" method="post">
+  <p>Электронная почта</p>
+  {{ form.email }}
+  <p>Пароль</p>
+  {{ form.password }}
+  {{ form.hidden_tag() }}
+  <br>
+  <br>
+  <input class="btn btn-primary btn-lg" type="submit" value="Войти">
+  <br>
+  <br>
+  <br>
+<h7><a class="btn btn-success btn-sm" href="register">Регистрация</a></h7>
+</form></center>

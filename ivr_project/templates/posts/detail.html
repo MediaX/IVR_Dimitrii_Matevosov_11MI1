@@ -1,0 +1,52 @@
+{% import "_forms.html" as forms %}
+
+{% extends "base.html" %}
+
+{% block page_header %}
+  <div class="page-header">
+    <h1>"{{ post.title }}"</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+  {% if post.body %}
+      <p>{{ post.body }}</p><br>
+      <p>{{ post.body1 }}</p><br>
+      <p>{{ post.body2 }}</p><br>
+      <p>{{ post.body3 }}</p><br>
+      <p>{{ post.body4 }}</p><br>
+    {% endif %}
+  {% if post.embed_code %}
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="480" height="360" src="{{ post.embed_code }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  {% endif %}
+{% if post.image_url %}
+  <p><img src="{{ post.image_url }}" /><p>
+{% endif %}
+
+
+  <p>{{ post.created_at.strftime('%H:%M %d-%m-%Y') }}</p>
+  <hr>
+  <h3>Комментарии</h3>
+  {% if post.comments %}
+    {% for comment in post.comments %}
+       <p>{{ comment.body }}</p>
+       <p><strong>{{ comment.author }}</strong> <small>в {{ comment.created_at.strftime('%H:%M %d-%m-%Y') }}</small></p>
+      {{ comment.text }}
+    {% endfor %}
+  {% endif %}
+
+
+<hr>
+<h4>Добавить комментарий</h4>
+<form action="." method="post">
+  {{ forms.render(form) }}
+<hr>
+  <div class="actions">
+    <input type="submit" class="btn primary" value="Комментировать">
+  </div>
+</form>
+<hr>
+
+{% endblock %}

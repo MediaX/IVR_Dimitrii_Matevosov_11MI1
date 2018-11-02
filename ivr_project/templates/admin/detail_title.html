@@ -1,0 +1,13 @@
+{% extends "admin/base_detail.html" %}
+{% import "_forms.html" as forms %}
+
+{% block content %}
+<div class="admin_edit">
+  <form action="?{{ request.query_string }}" method="post">
+    {{ forms.render(form) }}
+    <div class="actions">
+      <input type="submit" class="btn primary" value="Сохранить">
+    </div>
+  </form>
+  </div>
+{% endblock %}

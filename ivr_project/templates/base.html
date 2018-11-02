@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Хочу в Лицей НИУ ВШЭ</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .content {
+    padding-top: 30px;
+    padding-left: 50px;
+    margin-bottom: 40px;
+    }
+    .admin_edit{
+    padding-top:90px;
+    }
+
+    .1_title{
+        border: 4px solid rgb(81,121,250);
+        padding: 10px;
+    }
+    .font{
+    font-size: 14px;
+    }
+    .font1{
+    font-size: 10px;
+    }
+    .font_footer{
+    font-size: 12px;
+    color: white;
+    }
+
+    .footer{
+    background-color: rgb(69,122,200);
+    border-radius: 40px;
+    height:40px;
+    }
+
+    .top_bar{
+    border-radius: 30px;
+    }
+
+    .list{
+       height: 150px;
+       width: 130px;
+    }
+    .search{
+    text-align: right;
+    }
+
+    .color{
+    color: rgb(255,255,255);
+    }
+
+    </style>
+  </head>
+
+  <body>
+    {%- block topbar -%}
+    <nav class="navbar navbar-inverse navbar-fixed top_bar">
+      <div class="container">
+        <div class="navbar-center">
+          <h2>
+             <center>
+                 <a href="/" class="brand">Лицей НИУ ВШЭ</a>
+                 <form class="form-inline search" method="get" value="Search">
+                     <a class="btn btn-success btn-sm" href='/logout'>Выйти</a>
+                     <input type="text" class="form-control input-sm" id="search" name="search" placeholder="Поиск">
+                     <input class="btn btn-primary btn-sm" type="submit" value="Поиск"></form>
+                     <br>
+                  <a href="/about" class="brand font">О лицее</a><small> |</small>
+                  <a href="/napr" class="brand font">Направления</a><small> |</small>
+                  <a href="/exams" class="brand font">Вступительные</a><small> |</small>
+                  <a href="/video" class="brand font">Видео</a><small> |</small>
+                  <a href="/telegram" class="brand font">Лицеисты в телеграм</a><small> |</small>
+                  <a href="/advices" class="brand font">Советы</a><small> |</small>
+                 <a href="/events" class="brand font">Мероприятия</a><small> |</small>
+                 <a href="/day" class="brand font">Учебный день</a><small> |</small>
+                 <a href="/properties" class="brand font">Особенности</a>
+             </center>
+          </h2>
+        </div>
+        <div class="navbar-collapse">
+        </div>
+      </div>
+    </nav>
+    {%- endblock -%}
+
+
+    {%- block footer -%}
+    <nav class="navbar navbar-light navbar-fixed-bottom">
+      <div class="container">
+        <div class="footer">
+          <h2>
+             <center>
+                  <a href="/" class="brand font_footer">Главная</a><small class="color"> |</small>
+                  <a href="/about" class="brand font_footer">О лицее</a><small class="color"> |</small>
+                  <a href="/napr" class="brand font_footer">Направления</a><small class="color"> |</small>
+                  <a href="/exams" class="brand font_footer">Вступительные</a><small class="color"> |</small>
+                  <a href="/video" class="brand font_footer">Видео</a><small class="color"> |</small>
+                  <a href="/telegram" class="brand font_footer">Лицеисты в телеграм</a><small class="color"> |</small>
+                  <a href="/advices" class="brand font_footer">Советы</a><small class="color"> |</small>
+                 <a href="/advices" class="brand font_footer">Мероприятия</a><small class="color"> |</small>
+                 <a href="/advices" class="brand font_footer">Учебный день</a><small class="color"> |</small>
+                 <a href="/advices" class="brand font_footer">Особенности</a>
+             </center>
+          </h2>
+        </div>
+        <div class="navbar-collapse">
+        </div>
+      </div>
+    </nav>
+    {%- endblock -%}
+
+
+    <div class="container">
+      <div class="content ">
+          {% block title %}{% endblock %}
+        {% block page_header %}{% endblock %}
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for post in posts %}
+    {% if post.image_url %}
+        <p><img src="{{ post.image_url }}" class="img-thumbnail list"><p>
+    {% endif %}
+      <h2><a href="{{ url_for('posts.detail2', slug=post.slug) }}">{{ post.title }} </a></h2>
+      <p>{{ post.body|truncate(300) }}</p>
+      <p>
+        {{ post.created_at.strftime('%H:%M %d-%m-%Y') }} |
+        {% with total=post.comments|length %}
+            {{ total }} комментари {%- if total %10 in (2,3,4) %}я{%- elif total %10 in (5,6,7,8,9,0) -%}ев{%- else -%}й{%- endif -%}
+        {% endwith %}
+      </p>
+        <a class="btn bg-primary" href="{{ url_for('posts.detail2', slug=post.slug) }}">ПОДРОБНЕЕ</a>
+    {% endfor %}
+{% endblock %}

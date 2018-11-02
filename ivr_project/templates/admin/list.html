@@ -1,0 +1,33 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+
+    </div>
+  <table  class="table table-bordered table-striped">
+    <thead>
+      <th>Заголовок</th>
+      <th>Дата создания</th>
+      <th>Изменить</th>
+      <th>Удалить</th>
+    </thead>
+    <tbody>
+    {% for post1 in title %}
+          <tr>
+              <th><a href="{{ url_for('admin.edit10', slug=post1.slug) }}">{{ post1.title }}</a> (заголовок)</th>
+              <td>{{ post1.created_at.strftime('%Y-%m-%d') }}</td>
+              <td><a href="{{ url_for('admin.edit10', slug=post1.slug) }}" class="btn primary">Редактировать</a></td>
+              <td><a href="{{ url_for('admin.del_title', slug=post1.slug) }}" class="btn primary">Удалить</a></td>
+          </tr>
+    {% endfor %}
+
+    {% for post in posts %}
+      <tr>
+        <th><a href="{{ url_for('admin.edit', slug=post.slug) }}">{{ post.title }}</a> (статья)</th>
+        <td>{{ post.created_at.strftime('%Y-%m-%d') }}</td>
+        <td><a href="{{ url_for('admin.edit', slug=post.slug) }}" class="btn primary">Редактировать</a></td>
+        <td><a href="{{ url_for('admin.del', slug=post.slug) }}" class="btn primary">Удалить</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
